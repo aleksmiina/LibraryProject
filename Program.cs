@@ -1,18 +1,27 @@
-﻿
-public class LibraryItems 
+﻿public class Book 
 {
-    string[] historyBooksInStorage = {
-            "The History of Rome by Titus Livy",
-            "The Twelve Caesars by Suetonius",
-            "The Annals of Imperial Rome by Tacitus",
-            "Rubicon: The Last Years of the Roman Republic by Tom Holland",
-            "SPQR: A History of Ancient Rome by Mary Beard",
-            "The Decline and Fall of the Roman Empire by Edward Gibbon",
-            "Augustus: The Life of Rome's First Emperor by Anthony Everitt",
-            "The Storm Before the Storm: The Beginning of the End of the Roman Republic by Mike Duncan",
-            "Cicero: The Life and Times of Rome's Greatest Politician by Anthony Everitt",
-            "Rome's Last Citizen: The Life and Legacy of Cato, Mortal Enemy of Caesar by Rob Goodman and Jimmy Soni"
+    public string? Author { get; set; }
+    public string? BookName { get; set; }
+    public int YearOfPublishing { get; set; }
+}
+public class LibraryItems
+{
+     List<Book> romanHistoryBooks;
+
+    public LibraryItems()
+    {
+        romanHistoryBooks = new List<Book>
+        {
+            new Book { Author = "Mary Beard", BookName = "SPQR: A History of Ancient Rome", YearOfPublishing = 2015 },
+            new Book { Author = "Tom Holland", BookName = "Rubicon: The Last Years of the Roman Republic", YearOfPublishing = 2003 },
+            new Book { Author = "Adrian Goldsworthy", BookName = "Caesar: Life of a Colossus", YearOfPublishing = 2006 },
+            new Book { Author = "Edward Gibbon", BookName = "The History of the Decline and Fall of the Roman Empire", YearOfPublishing = 1776 },
+            new Book { Author = "Anthony Everitt", BookName = "Cicero: The Life and Times of Rome's Greatest Politician", YearOfPublishing = 2001 }
         };
+    }
+
+
+
 }
 
 public class Program
@@ -23,10 +32,7 @@ public class Program
     }
 }
 
-// how will my library look like? It will have a list of books. User would be able to borrow a book from it.
-// so, I need to create a list of books for now.
-// then user will be able via console.readline to ask for a book and borrow it.
-// how to store books? list or array? 
-// when a book is borrowed, it should be removed from the list. The user should have a possibility to return the book and the list we be updated.
-// I need to figure out the way of store these books. 
-// the list should include separate authors, names, etc. 
+// okay, looks like that I have messed the structure and I need to think more logically. 
+// we have a library which stores books. Books have their own properties like author, book name, year of publishing. 
+
+// then, I could create a class called LibraryItems and store a list of books in it.
